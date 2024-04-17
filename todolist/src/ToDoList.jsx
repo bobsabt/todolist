@@ -37,7 +37,7 @@ function ToDoList(){
     return(
     <div className="to-do-list">
         <h1>To-Do-List</h1>
-        <div>
+        <div className='input-box'>
             <input 
                 type="text"
                 placeholder="Enter a task..."
@@ -55,24 +55,26 @@ function ToDoList(){
             {tasks.map((task, index) => 
                 <li key={index}>
                     <span className="text">{task}</span>
-                    <button 
-                        className="delete-button" 
-                        onClick={() => deleteTask(index)}
-                        >
-                            Delete
-                    </button>
-                    <button 
-                        className="move-button" 
-                        onClick={() => moveTaskUp(index)}
-                        >
-                            ☝                            
-                    </button>
-                    <button 
-                        className="move-button" 
-                        onClick={() => moveTaskDown(index)}
-                        >
-                            👇
-                    </button>
+                    <div className="button-container">
+                        <button 
+                            className="delete-button" 
+                            onClick={() => deleteTask(index)}
+                            >
+                                Delete
+                        </button>
+                        <button 
+                            className="move-button" 
+                            onClick={() => moveTaskUp(index)}
+                            >
+                                ☝                            
+                        </button>
+                        <button 
+                            className="move-button" 
+                            onClick={() => moveTaskDown(index)}
+                            >
+                                👇
+                        </button>
+                    </div>
                 </li>
         )}
         </ol>
