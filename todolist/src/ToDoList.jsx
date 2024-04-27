@@ -35,13 +35,14 @@ function ToDoList(){
     }
 
     return(
-    <div className="to-do-list">
+    <div className="todolist">
         <h1>To-Do-List</h1>
         <div className='input-box'>
             <input 
                 type="text"
                 placeholder="Enter a task..."
                 value={newTask}
+                maxLength={50}
                 onChange={handleInputChange}
             />
             <button 
